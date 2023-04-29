@@ -1,5 +1,5 @@
 #Menu Principal
-menuPrincipla = {
+menuPrincipal = {
     "1": " Nossos Contatos",
     "2": " Dúvidas Frequentes ",
     "3": " Projetos",
@@ -33,7 +33,7 @@ opcao3 = {
 # função para mostrar as opções de atendimento e capturar a escolha do usuário
 def escolher_opcao():
     print("Para atendimento por favor digite o número correspondente e clique Enter:")
-    for selecione, pergunta in menuPrincipla.items():
+    for selecione, pergunta in menuPrincipal.items():
         print(f"{selecione}. {pergunta}")
     escolha = int(input("Opcao escolhida : "))
     if escolha == 4:
@@ -57,7 +57,7 @@ def mostrar_perguntas_respostas(escolha):
             break
         elif escolha2 == 4:
             break
-def mostrar_perguntas_respostas(escolha):
+def mostrar_perguntas_respostas2(escolha):
     while True:
         print("1. Frequência e formato da aula\n2. Requisitos para fazer o curso(Análise de Dados)\n3. Qual a linguagem de programação abordada ?\n4. Sair")
         escolha3 = int(input('Digite o número referente a escolha: '))
@@ -72,7 +72,7 @@ def mostrar_perguntas_respostas(escolha):
             break
         elif escolha3 == 4:
             break
-def mostrar_perguntas_respostas(escolha):
+def mostrar_perguntas_respostas3(escolha):
     while True:
         print("1. Projeto chatbot\n2. Projeto Banco de Dados\n3. Projeto análise e fluxo de caixa\n4. Sair",)
         escolha4 = int(input('Digite o número referente a escolha: '))
@@ -94,7 +94,12 @@ def mostrar_perguntas_respostas(escolha):
 # loop principal do bot
 while True:
     selecione = escolher_opcao()
-    mostrar_perguntas_respostas(selecione)
+    if selecione==1:
+        mostrar_perguntas_respostas(selecione)
+    elif selecione==2:
+        mostrar_perguntas_respostas2(selecione)
+    elif selecione==3:
+        mostrar_perguntas_respostas3(selecione)
     reiniciar = input("Deseja reiniciar este atendimento? (s/n) ")
     if reiniciar.lower() != "s":
         break
